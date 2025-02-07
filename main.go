@@ -20,7 +20,7 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostHandler(w http.ResponseWriter, r *http.Request) {
-	var tasks []Task
+	var tasks Task
 	json.NewDecoder(r.Body).Decode(&tasks)
 
 	if err := DB.Create(&tasks).Error; err != nil {
