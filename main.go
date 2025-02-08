@@ -76,7 +76,7 @@ func DeleteHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintln(w, "Task deleted successfully")
+	w.WriteHeader(http.StatusNoContent)
 }
 
 func main() {
